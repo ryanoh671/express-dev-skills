@@ -4,9 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Express Skills</title>
 </head>
 <body>
-    
-</body>
+  <h3>To-Dos as of <%= time %></h3>
+    <ul>
+      <% skills.forEach(function(s) { %>
+        <li>
+          <a href="/skills/<%= s.id %>"><%= s.skill %></a>
+          <%= s.skill %>
+            - 
+          <%= s.done ? 'done' : 'not done' %>
+        </li>
+      <% }); %>
+    </ul>
+  </body>
 </html>

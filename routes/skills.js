@@ -1,5 +1,4 @@
-var express = require('express');
-var router = express.Router();
+
 
 // All actual paths start with "/skills"
   // routes/todos.js
@@ -12,7 +11,10 @@ var router = express.Router();
 
   // All actual paths begin with "/todos"
 
-  // GET /todos
+  // GET /skills
   router.get('/', skillsCtrl.index);
 
+  // GET /todos/:id
+  router.get('/:id', skillsCtrl.show);
+   
 module.exports = router;
