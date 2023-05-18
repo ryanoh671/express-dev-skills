@@ -13,6 +13,9 @@
 
   // GET /skills
   router.get('/', skillsCtrl.index);
+  
+  // GET /todos/new <- Define BEFORE show route
+  router.get('/new', skillsCtrl.new);
 
   // GET /todos/:id
   router.get('/:id', skillsCtrl.show);

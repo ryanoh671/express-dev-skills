@@ -5,21 +5,27 @@ const Skill = require('../models/skill');
 
 module.exports = {
     index,
-    show
+    show,
+    new: newSkill
     };
 
     // res render is always gonna look in your views folder.
     // the second object is what you want to pass. 
 function index(req, res) {
     res.render('skills/index', {
-      skills: Skill.getAll()
+      skills: Skill.getAll(),
+      title: 'All Skills'
     });
   }
 
     
-  function show(req, res) {
-    res.render('skills/show', {
-      skill: Skill.getOne(req.params.id),
-      // title: 'Skill Details'
-    });
-  }
+function show(req, res) {
+  res.render('skills/show', {
+    skill: Skill.getOne(req.params.id),
+    title: 'Skill Details'
+  });
+}
+
+function newSkill(req, res) {
+  res.render('skills/new', { title: 'New Skill' });
+}
