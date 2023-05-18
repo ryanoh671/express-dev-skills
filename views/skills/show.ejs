@@ -1,4 +1,6 @@
-<body>
+<%- include('../partials/header') %>
+
     <h3><%= skill.skill %></h3>
-    <h3>Complete: <%= skill.done ? 'Yes' : 'No' %></h3>
-</body>
+    <h3>Job ready?: <%= skill.jobReady ? 'Yes' : 'No' %></h3>
+    
+<%- include('../partials/footer') %>
